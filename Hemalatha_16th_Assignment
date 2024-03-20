@@ -1,0 +1,423 @@
+{
+	"info": {
+		"_postman_id": "9a1a1181-4b12-4496-b897-f2adabb1e9cb",
+		"name": "Hemalatha_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13004301"
+	},
+	"item": [
+		{
+			"name": "incidents",
+			"item": [
+				{
+					"name": "GetAllincidents",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "tK3bC$JF8i!v",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev212799.service-now.com/api/now/table/incident",
+							"protocol": "https",
+							"host": [
+								"dev212799",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"incident"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create new incident",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "tK3bC$JF8i!v",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"short_description\":\"created new incidents thru postman\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev212799.service-now.com/api/now/table/incident?sysparm_fields=number,short_description",
+							"protocol": "https",
+							"host": [
+								"dev212799",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"incident"
+							],
+							"query": [
+								{
+									"key": "sysparm_fields",
+									"value": "number,short_description"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "change requests",
+			"item": [
+				{
+					"name": "GetAllincidents",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "tK3bC$JF8i!v",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev212799.service-now.com/api/now/change_request",
+							"protocol": "https",
+							"host": [
+								"dev212799",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"change_request"
+							],
+							"query": [
+								{
+									"key": "sysparm_fields",
+									"value": "number,sys_id,short_description",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create new incident",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "tK3bC$JF8i!v",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"short_description\":\"created new incidents by Hemalatha\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev212799.service-now.com/api/now/table/incident?sysparm_fields=number,short_description",
+							"protocol": "https",
+							"host": [
+								"dev212799",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"incident"
+							],
+							"query": [
+								{
+									"key": "sysparm_fields",
+									"value": "number,short_description"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "16th_Assngmt",
+			"item": [
+				{
+					"name": "newchangerequest",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "tK3bC$JF8i!v",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://dev212799.service-now.com/api/now/table/change_request?sysparm_fields=number,sys_id,short_description",
+							"protocol": "https",
+							"host": [
+								"dev212799",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"change_request"
+							],
+							"query": [
+								{
+									"key": "sysparm_fields",
+									"value": "number,sys_id,short_description"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retirive the new CR",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "tK3bC$JF8i!v",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev212799.service-now.com/api/now/table/change_request/73bdd16047450210f272b71f316d43f0?sysparm_fields=number,short_description,sys_id",
+							"protocol": "https",
+							"host": [
+								"dev212799",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"change_request",
+								"73bdd16047450210f272b71f316d43f0"
+							],
+							"query": [
+								{
+									"key": "sysparm_fields",
+									"value": "number,short_description,sys_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify the short desc",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "tK3bC$JF8i!v",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"short_description\":\"newly adding short description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev212799.service-now.com/api/now/table/change_request/73bdd16047450210f272b71f316d43f0?sysparm_fields=number,short_description,sys_id",
+							"protocol": "https",
+							"host": [
+								"dev212799",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"change_request",
+								"73bdd16047450210f272b71f316d43f0"
+							],
+							"query": [
+								{
+									"key": "sysparm_fields",
+									"value": "number,short_description,sys_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete the CR",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "tK3bC$JF8i!v",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"short_description\":\"newly adding short description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev212799.service-now.com/api/now/table/change_request/73bdd16047450210f272b71f316d43f0",
+							"protocol": "https",
+							"host": [
+								"dev212799",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"change_request",
+								"73bdd16047450210f272b71f316d43f0"
+							],
+							"query": [
+								{
+									"key": "sysparm_fields",
+									"value": "number,short_description,sys_id",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
