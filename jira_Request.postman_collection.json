@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "6afe1f29-219f-4461-82cf-388380487e56",
+		"name": "JIRA_Request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13004301"
+	},
+	"item": [
+		{
+			"name": "Chain_request_jira Copy",
+			"item": [
+				{
+					"name": "create Jira 200 response",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var resp=pm.response.json();\r",
+									"//x.result.sys_id   x--response\r",
+									"var jira_id = resp.id;\r",
+									"// variable key--name of the global variable ,variable_value --sys_id)\r",
+									"pm.globals.set(\"id\",jira_id);\r",
+									"\r",
+									"pm.test(\"status code is 201\",function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"// pm.test(\"authendicaion incorrect 401\",function(){\r",
+									"//     pm.response.to.have.status(401);\r",
+									"// });\r",
+									"\r",
+									"// pm.test(\"missing required fields 400\",function(){\r",
+									"//     pm.response.to.have.status(400);\r",
+									"// });\r",
+									"\r",
+									"// pm.test(\" user does not have the necessary permission 403\",function(){\r",
+									"//     pm.response.to.have.status(403);\r",
+									"// });\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password_jira}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username_jira}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fields\": {\r\n    \"project\":\r\n                {\r\n                    \"key\": \"TES\"\r\n                },\r\n    \"summary\": \"{{summary}}\",\r\n    \"description\": \"{{$randomDepartment}}\",\r\n    \"issuetype\": {\r\n                    \"name\": \"Bug\"\r\n                }\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_jira}}",
+							"host": [
+								"{{url_jira}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get the jira",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 200\",function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// pm.test(\"authendicaion credentials incorrect 401\",function(){\r",
+									"//     pm.response.to.have.status(401);\r",
+									"// });\r",
+									"\r",
+									"// pm.test(\"issue is not found or the user does not have  permission to view it 404\",function(){\r",
+									"//     pm.response.to.have.status(404);\r",
+									"// });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password_jira}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username_jira}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_jira}}{{id}}",
+							"host": [
+								"{{url_jira}}{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update jira",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"status code is 204\",function(){\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									"// pm.test(\"missing required fields 400\",function(){\r",
+									"//     pm.response.to.have.status(400);\r",
+									"// });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password_jira}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username_jira}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fields\": {\r\n    \"description\": \"Bug creation Using REST API for testing\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_jira}}{{id}}",
+							"host": [
+								"{{url_jira}}{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Jira id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 204\",function(){\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password_jira}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username_jira}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_jira}}{{id}}",
+							"host": [
+								"{{url_jira}}{{id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
